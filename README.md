@@ -128,5 +128,7 @@ Then, deploy the contents of the build directory to your hosting provider of cho
 
 ## Screenshots
 
-![Stripe Payment Form](https://github.com/parthivvv/appleutetest/blob/main/customerscreenshot.png)
+![Customer](https://github.com/parthivvv/appleutetest/blob/main/customerscreenshot.png)
+![PaymentLanding](https://github.com/parthivvv/appleutetest/blob/main/mainpage.png)
+![StripePayment](https://github.com/parthivvv/appleutetest/blob/main/stripepaymentredirect.png)
 
