@@ -17,7 +17,7 @@ The backend server runs on `http://localhost:3000`, and the frontend server runs
 
 Before you begin, ensure you have met the following requirements:
 
-- Node.js installed on your local machine.
+- Nest.js installed on your local machine.
 - Stripe account for processing payments.
 
 ## Backend Setup (StripeApp)
