@@ -12,6 +12,7 @@ The backend server runs on `http://localhost:3000`, and the frontend server runs
 
 - Stripe Payment Integration
 - Customer Management Interface
+- Credit Card Validation (Change the validators return value to true for testing purposes)
 
 ## Prerequisites
 
