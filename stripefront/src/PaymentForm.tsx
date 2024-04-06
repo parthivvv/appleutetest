@@ -44,15 +44,37 @@ const CheckoutButton: React.FC = () => {
   };
 
   const validateCreditCard = (): boolean => {
-    // Get credit card input values
     const cardNumber = (document.getElementById('cc-number') as HTMLInputElement)?.value;
     const expDate = (document.getElementById('cc-exp') as HTMLInputElement)?.value;
     const cvc = (document.getElementById('cc-cvc') as HTMLInputElement)?.value;
   
-    // Perform validation checks if needed (left empty for testing simplicity)
-    const isValid = true;
-    return isValid;
-  };
+    const isValidCardNumber = validateCardNumber(cardNumber);
+    const isValidExpDate = validateExpDate(expDate);
+    const isValidCVC = validateCVC(cvc);
+  
+    return isValidCardNumber && isValidExpDate && isValidCVC; //For testing purposes, if you want to use random credit card numbers please 
+                                                              // change the return to ->   return true;
+};
+
+const validateCardNumber = (cardNumber: string): boolean => {
+    const regex = /^(?:[0-9]{4}[\s-]?){3}[0-9]{4}$/;
+    return regex.test(cardNumber);
+};
+
+const validateExpDate = (expDate: string): boolean => {
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth() + 1; // January is 0
+    const [inputMonth, inputYear] = expDate.split('/').map((str) => parseInt(str.trim(), 10));
+  
+    return inputYear > currentYear || (inputYear === currentYear && inputMonth >= currentMonth);
+};
+
+const validateCVC = (cvc: string): boolean => {
+    const regex = /^[0-9]{3,4}$/;
+    return regex.test(cvc);
+};
+
   
 
   return (
